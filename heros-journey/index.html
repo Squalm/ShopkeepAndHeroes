@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width">
     <title>Shopkeep & Heroes - Describe the hero's victory!</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+    <link href="../item-submission/style.css" rel="stylesheet" type="text/css" />
     <link href="style.css" rel="stylesheet" type="text/css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -14,14 +16,16 @@
 
   <body>
 
-    <div id="itemPrompt">
-    
-      <p>The hero trembles before you, soon to enter their hopefully-not-final dungeon. They looks pretty desparate and also pretty gullible, what do you sell him to lead them to safety? ... or at least because it's been sitting around for a while and you're looking to get rid of it finally.</p>
-      <h1>Fill in the prompt below with the name of your item!</h1>
+    <header><a href="../index.html">Home</a> <a href="../item-submission/index.html">Shopkeep</a> <a href="../heros-journey/index.html">Hero</a> <a href="../about/index.html">About</a></header>
 
-      <input type="text" maxlength="2000" id="itemInput">
+    <div id="heroPrompt">
+    
+      <p id="heroText">Weary, and, apparently more gullible than even you realised, you have reached the end of [insert dungeon or challenge here]. How does, [insert item here] help you succeed in overcoming [insert dungeon or challenge here]?</p>
+      <h1 id="heroTitle">Fill in the prompt below with a description of your heroics!</h1>
+
+      <textarea type="text" maxlength="5000" id="heroInput" wrap="soft"></textarea>
       
-      <p>Max 2000 characters, make it cool!</p>
+      <p id="heroInputLimits">Max 5000 characters, make it cool!</p>
   
     </div>
 

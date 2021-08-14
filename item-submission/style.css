@@ -1,27 +1,34 @@
+/* THIS FILE DOES CSS FOR BOTH ITEM-SUBMISSION and HEROS-JOURNEY */
+
 * {
     font-family: 'Arvo', serif, 'Courier New', Courier, monospace;
-    /*background-color: #FCEFD9;*/
     color: #1A181B;
+    background-color: #fcf7d9;
+
 }
 
-#itemPrompt {
+#itemPrompt, #heroPrompt {
     padding: 8vmin;
     position: relative;
     top: 10vh;
 }
 
-#itemText {
+#itemText, #heroText {
     text-align: justify;
     padding-left: 12vw;
     padding-right: 12vw;
 }
 
-#itemTitle {
+#itemTitle, #heroTitle {
     text-align: center;
     color: #247BA0;
 }
 
-#itemInput {
+#heroTitle {
+    color: #FF1654;
+}
+
+#itemInput, #heroInput {
     width: 100%;
     text-align: center;
     font-size: 6vmin;
@@ -32,9 +39,21 @@
     border-top-style: dotted;
     border-bottom-style: dotted;
     border-color: #1A181B;
+
+    height: 8vmin;
 }
 
-#itemInputLimits {
+#itemInput:focus, #heroInput:focus {
+    outline: none;
+}
+
+#heroInput {
+    color: #FF1654;
+    height: 24vmin;
+    font-size: 4vmin;
+}
+
+#itemInputLimits, #heroInputLimits {
     text-align: center;
 }
 
