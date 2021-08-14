@@ -13,6 +13,11 @@
     top: 10vh;
 }
 
+#heroPrompt {
+    padding-top: 4vmin;
+    padding-bottom: 4vmin;
+}
+
 #itemText, #heroText {
     text-align: justify;
     padding-left: 12vw;
