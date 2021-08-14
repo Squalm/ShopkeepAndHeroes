@@ -8,7 +8,7 @@ span {
     position: absolute;
     left: 0;
     right: 0;
-    top: 25%;
+    top: 15%;
     bottom: 0;
     text-align: center;
 }
@@ -29,7 +29,7 @@ span {
 .description {
     color: #1A181B;
     font-size: 2vmin;
-    top: 40%;
+    top: 30%;
 }
 
 a {

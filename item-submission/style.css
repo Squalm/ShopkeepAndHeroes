@@ -1,0 +1,44 @@
+* {
+    font-family: 'Arvo', serif, 'Courier New', Courier, monospace;
+    /*background-color: #FCEFD9;*/
+    color: #1A181B;
+}
+
+#itemPrompt {
+    padding: 8vmin;
+    position: relative;
+    top: 10vh;
+}
+
+#itemText {
+    text-align: justify;
+    padding-left: 12vw;
+    padding-right: 12vw;
+}
+
+#itemTitle {
+    text-align: center;
+    color: #247BA0;
+}
+
+#itemInput {
+    width: 100%;
+    text-align: center;
+    font-size: 6vmin;
+    color: #247BA0;
+
+    border-left-style: hidden;
+    border-right-style: hidden;
+    border-top-style: dotted;
+    border-bottom-style: dotted;
+    border-color: #1A181B;
+}
+
+#itemInputLimits {
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+}
