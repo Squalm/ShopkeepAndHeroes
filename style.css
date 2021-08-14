@@ -1,0 +1,39 @@
+* {
+    font-family: 'Arvo', serif, 'Courier New', Courier, monospace;
+    /*background-color: #FCEFD9;*/
+}
+
+span {
+    font-size: 8vmin;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25%;
+    bottom: 0;
+    text-align: center;
+}
+
+.choiceItem {
+    left: 8vmin;
+    text-align: left;
+    color: #247BA0;
+    right: 65vw;
+}
+.choiceHero {
+    right: 8vmin;
+    text-align: right;
+    color: #FF1654;
+    left: 65vw;
+}
+
+.description {
+    color: #1A181B;
+    font-size: 2vmin;
+    top: 40%;
+}
+
+a {
+    background-color: inherit;
+    font-size: inherit;
+    color: inherit;
+}
