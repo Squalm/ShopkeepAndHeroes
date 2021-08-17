@@ -38,3 +38,8 @@ a {
     font-size: inherit;
     color: inherit;
 }
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+}
