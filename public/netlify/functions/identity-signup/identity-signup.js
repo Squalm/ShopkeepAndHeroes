@@ -52,7 +52,6 @@ exports.handler = async function(event, context) {
   } else {
     return {
       statusCode: 200,
-      body: "All is well!"
     };
   }
 };
