@@ -1,3 +1,5 @@
+window.auth0Secret = "{{ env('auth0_config_secret') }}";
+
 // Courtesy of auth0
 
 const { auth } = require('express-openid-connect');
@@ -6,7 +8,7 @@ const { env } = require('process');
 const config = {
   authRequired: false,
   auth0Logout: true,
-  secret: ' {{ env("auth0_config_secret") }}',
+  secret: auth0Secret,
   baseURL: 'https://shopkeepandheroes.netlify.app',
   clientID: 'MAlEvCvQK8NWpBm22SDZPBN5gieqPbWY',
   issuerBaseURL: 'https://dev-y36uzk1n.eu.auth0.com'
