@@ -2,10 +2,15 @@
     "name": "shopkeepandheroes",
     "version": "0.1.0",
     "license": "GPL-3.0",
-    "repository": {"url": "https://github.com/Squalm/ShopkeepAndHeroes"},
-    "bugs": {"url": "https://github.com/Squalm/ShopkeepAndHeroes/issues"},
+    "repository": {
+        "url": "https://github.com/Squalm/ShopkeepAndHeroes"
+    },
+    "bugs": {
+        "url": "https://github.com/Squalm/ShopkeepAndHeroes/issues"
+    },
     "dependencies": {
         "express": "^4.17.1",
-        "express-openid-connect": "^2.5.0"
+        "express-openid-connect": "^2.5.0",
+        "node-fetch": "^2.6.1"
     }
 }
