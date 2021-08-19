@@ -1,0 +1,16 @@
+* {
+    font-family: 'Arvo', serif, 'Courier New', Courier, monospace;
+    background-color: #fcf7d9;
+    color: #1A181B;
+}
+
+a {
+    background-color: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+}

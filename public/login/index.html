@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>A static website</title>
+  <title>Login to Shopkeep & Heroes!</title>
 
-  <!-- include the widget -->
+  <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+  <link href="../global-style.css" rel="stylesheet" type="text/css" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
   <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 </head>
 <body>
+
+  <header><a href="../index.html">Home</a> <a href="../item-submission/index.html">Shopkeep</a> <a href="../heros-journey/index.html">Hero</a> <a href="../about/index.html">About</a> <a href="../login/index.html">Login</a></header>
+
+  <h1>Sign up or log in below!</h1>
+
   <!-- Add a menu:
    Log in / Sign up - when the user is not logged in
    Username / Log out - when the user is logged in
   -->
   <div data-netlify-identity-menu></div>
 
-  <!-- Add a simpler button:
-    Simple button that will open the modal.
-  -->
-  <div data-netlify-identity-button>Login with Netlify Identity</div>
 </body>
 </html>
