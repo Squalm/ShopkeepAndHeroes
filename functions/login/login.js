@@ -1,17 +1,21 @@
-// Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
-const handler = async (event) => {
-  try {
-    const subject = event.queryStringParameters.name || 'World'
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ message: `Hello ${subject}` }),
-      // // more keys you can return:
-      // headers: { "headerName": "headerValue", ... },
-      // isBase64Encoded: true,
-    }
-  } catch (error) {
-    return { statusCode: 500, body: error.toString() }
-  }
-}
+// Courtesy of auth0
 
-module.exports = { handler }
+const { auth } = require('express-openid-connect');
+const { env } = require('process');
+
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: ' {{ env("auth0_config_secret") }}',
+  baseURL: 'https://shopkeepandheroes.netlify.app',
+  clientID: 'MAlEvCvQK8NWpBm22SDZPBN5gieqPbWY',
+  issuerBaseURL: 'https://dev-y36uzk1n.eu.auth0.com'
+};
+
+// auth router attaches /login, /logout, and /callback routes to the baseURL
+app.use(auth(config));
+
+// req.isAuthenticated is provided from the auth router
+app.get('/', (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+});
