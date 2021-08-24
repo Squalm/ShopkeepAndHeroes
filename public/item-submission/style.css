@@ -9,13 +9,10 @@
 
 #itemPrompt, #heroPrompt {
     padding: 8vmin;
-    position: relative;
-    top: 10vh;
-}
-
-#heroPrompt {
     padding-top: 4vmin;
     padding-bottom: 4vmin;
+    position: relative;
+    top: 10vh;
 }
 
 #itemText, #heroText {
