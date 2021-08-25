@@ -5,6 +5,8 @@
     border: double;
     border-color: #1A181B;
     border-radius: 1vmin;
+
+    background-color: #eadfc0;
 }
 
 .name{
@@ -15,10 +17,13 @@
 
 .result {
     color: #FF1654;
+
+    background-color: inherit;
 }
 
 .journey {
     color: #247BA0;
+
 }
 
 .created_at {
@@ -43,6 +48,8 @@
     border-color: #1A181B;
     margin: 4vmin;
     padding: 1vmin;
+
+    background-color: inherit;
 }
 
 .description {
