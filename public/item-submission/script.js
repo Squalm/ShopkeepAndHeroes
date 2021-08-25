@@ -1,8 +1,10 @@
 // eslint-disable-next-line no-unused-vars
-function onSubmitItem() {
+async function onSubmitItem() {
 
     // Submit the item to the database
-    
+    const response = await fetch('https://shopkeepandheroes.netlify.app/.netlify/functions/text-checks');
+    const parsed_json = await response.json(); //extract JSON from the http response
+    console.log(parsed_json);
 
 }
 
