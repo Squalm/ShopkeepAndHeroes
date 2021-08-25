@@ -33,6 +33,7 @@
 }
 
 .likes {
+    float: left;
     font-size: 1.3vmin;
 }
 

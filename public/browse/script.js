@@ -28,7 +28,7 @@ async function browsePage() {
 
         graphical_results_html +=
         '<span class="result likes">Likes: ' + parsed_json.items[item].likes + '</span>' +
-        '<span class="result created_at">' + parseTimeStamp(parsed_json.items[item].created_at) + '</span>';
+        '<span class="result created_at">' + parseTimeStamp(parsed_json.items[item].created_at) + '</span><br>';
 
         graphical_results_html += '</div>'
 
