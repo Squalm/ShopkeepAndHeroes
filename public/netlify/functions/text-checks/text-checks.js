@@ -38,6 +38,11 @@ const handler = async (event, context) => {
             }
         }
 
+        // If all checks passed:
+        const response = await fetch('https://shopkeepandheroes.netlify.app/.netlify/functions/text-checks');
+        const parsed_json = await response.json(); //extract JSON from the http response
+        console.log(parsed_json);
+
         return {
             statusCode: 200,
             body: JSON.stringify({ message: "Submitted" }),
