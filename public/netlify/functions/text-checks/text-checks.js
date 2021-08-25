@@ -1,9 +1,18 @@
-// Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
-const handler = async (event) => {
+const handler = async (event, context) => {
     try {
 
         let check = true;
-        let item_name = document.getElementById("itemInput").value;
+        let item_name = document.getElementById("itemInput").value.trim();
+
+        const { identity, user } = context.clientContext;
+
+        if (user) {const userID = user.sub;}
+        else {
+            return {
+                statusCode: 401,
+                body: JSON.stringify( { message: "Not a user" } )
+            }
+        }
 
         if (item_name == "") {
             check = false;
@@ -30,7 +39,7 @@ const handler = async (event) => {
         }
 
         return {
-            statusCode: 202,
+            statusCode: 200,
             body: JSON.stringify({ message: "Submitted" }),
         }
 
