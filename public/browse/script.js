@@ -3,7 +3,7 @@ async function browsePage() {
 
     document.getElementById("browseContainer").innerHTML = "Getting results, this can take a sec..."
 
-    const response = await fetch('https://shopkeep-and-heroes.hasura.app/api/rest/items/bytime/desc/wjourneys/wusers/0');
+    const response = await fetch('https://shopkeep-and-heroes.hasura.app/api/rest/items/browse/0');
     const parsed_json = await response.json(); //extract JSON from the http response
     console.log(parsed_json);
 
