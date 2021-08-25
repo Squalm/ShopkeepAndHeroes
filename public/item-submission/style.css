@@ -63,13 +63,16 @@ button {
     display: flex;
     justify-content: center;
     position: relative;
-    left: 48%;
-    width: 4%;
+    /*left: 45%;*/
+    width: 100%;
     text-align: center;
     color: #247BA0;
     
     border-style: hidden;
     font-size: 2vmin;
+}
+button:hover {
+    color: #FF1654;
 }
 
 header {
