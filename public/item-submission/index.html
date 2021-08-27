@@ -20,8 +20,7 @@
 
   <body>
 
-    <header><a href="../index.html">Home</a> <a href="../browse/index.html">Browse</a> <a href="../item-submission/index.html">Shopkeep</a> <a href="../heros-journey/index.html">Hero</a> <a href="../about/index.html">About</a> <div data-netlify-identity-menu></div>
-    </header>
+    <header><a href="../index.html">Home</a> <a href="../browse/index.html">Browse</a> <a href="../item-submission/index.html">Shopkeep</a> <a href="../heros-journey/index.html">Hero</a> <a href="../about/index.html">About</a> <a href="../login/index.html">Login</a></header>
 
     <div id="itemPrompt">
     
@@ -36,7 +35,11 @@
     
     </div>
 
-    <div class="result_container"><!-- JS will fill in the items here --></div>
+    <!-- Add a menu:
+    Log in / Sign up - when the user is not logged in
+    Username / Log out - when the user is logged in
+    -->
+    <div data-netlify-identity-menu></div>
 
     <script src="script.js"></script>
   </body>
