@@ -1,12 +1,16 @@
+const { response } = require("express");
+
 const handler = async (event, context) => {
     try {
 
         let check = true;
         let item_name = document.getElementById("itemInput").value.trim();
 
+        // eslint-disable-next-line no-unused-vars
         const { identity, user } = context.clientContext;
 
-        if (user) {const userID = user.sub;}
+        let userID = ""
+        if (user) {userID = user.sub;}
         else {
             return {
                 statusCode: 401,
@@ -40,10 +44,22 @@ const handler = async (event, context) => {
 
         // If all checks passed:
 
+        const request_url = "https://shopkeep-and-heroes.hasura.app/api/rest/items/insert/:name/:created_by";
+        var xhr = new XMLHttpRequest();
+        let response;
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+                console.log(xhr.response);
+                response = xhr.response;
+            }
+        }
+        xhr.open("POST", request_url, true, userID);
+
         return {
             statusCode: 200,
-            body: JSON.stringify({ message: "Submitted" }),
-        }
+            body: JSON.stringify({ message: response })
+        };
+
 
     } catch (error) {
         return { statusCode: 500, body: error.toString() }
