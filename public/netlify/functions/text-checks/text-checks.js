@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 const { response } = require("express");
 
-module.exports.handler = async (event, context) => {
+exports.handler = async (event, context) => {
     try {
 
         let check = true;
@@ -65,5 +65,3 @@ module.exports.handler = async (event, context) => {
         return { statusCode: 400, body: error.toString() }
     }
 }
-
-module.exports = { handler }
