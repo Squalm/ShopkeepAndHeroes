@@ -10,6 +10,7 @@ async function onSubmitItem() {
 }
 
 // Get some items in onload
+// Move this to heros-journey soon
 async function browseItems(page) {
 
     const response = await fetch('https://shopkeep-and-heroes.hasura.app/api/rest/items/createJourney/' + page);
@@ -19,17 +20,6 @@ async function browseItems(page) {
     for (let i=0; i < parsed_json.length; i++) {
         continue;
     }
-
-}
-
-// function to interpret the timestamps into something readable
-function parseTimeStamp(time) {
-    return time.slice(8, 10) + "/" + time.slice(5, 7) + "/" + time.slice(0, 4) + " @ " + time.slice(11, 16);
-}
-
-window.onload = function() {
-    
-    browseItems(0);
 
 }
 
