@@ -8,8 +8,7 @@ const handler = async (event, context) => {
         let check = true;
         let item_name = JSON.parse(event.body);
 
-        // eslint-disable-next-line no-unused-vars
-        const { identity, user } = context.clientContext;
+        const user = context.clientContext.user;
 
         let userID = ""
         if (user) {userID = user.sub;}
