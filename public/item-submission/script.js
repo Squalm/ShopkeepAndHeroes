@@ -4,12 +4,14 @@ async function onSubmitItem() {
     // Submit the item to the database by invoking the function
     const request_url = "../.netlify/functions/text_checks/text_checks.js";
     let item_name = document.getElementById("itemInput").value;
-    document.getElementById("itemTitle").value = fetch(request_url, {
+    console.log(item_name)
+    const submit_item =  fetch(request_url, {
             body: JSON.stringify(item_name),
             method: "POST"
         }).then((response) => {
         return response.json()
     });
+    document.getElementById("itemTitle").value = submit_item;
 
 }
 
