@@ -5,7 +5,7 @@ async function onSubmitItem() {
     const request_url = "../.netlify/functions/text_checks/text_checks";
     document.getElementById("itemTitle").value = fetch(request_url, {
             body: JSON.stringify(document.getElementById("itemInput").value),
-            method: "PSOT"
+            method: "POST"
         }).then((response) => {
         return response.json()
     });
