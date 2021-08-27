@@ -10,7 +10,11 @@ const handler = async (event, context) => {
 
         const user = context.clientContext.user;
 
-        let userID = ""
+        return {
+            statusCode: 200,
+            body: JSON.stringify( { message: user.sub } )
+        }
+
         if (user) {userID = user.sub;}
         else {
             return {
