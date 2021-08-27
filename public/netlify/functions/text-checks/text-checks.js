@@ -44,7 +44,7 @@ const handler = async (event, context) => {
 
         // If all checks passed:
 
-        const request_url = "https://shopkeep-and-heroes.hasura.app/api/rest/items/insert/:name/:created_by";
+        const request_url = "https://shopkeep-and-heroes.hasura.app/api/rest/items/insert/"+ item_name +"/" + userID;
         var xhr = new XMLHttpRequest();
         let response;
         xhr.onreadystatechange = function() {
