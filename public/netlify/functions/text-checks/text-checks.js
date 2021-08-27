@@ -11,7 +11,14 @@ const handler = async (event, context) => {
         // eslint-disable-next-line no-unused-vars
         const { identity, user } = context.clientContext;
 
-        let userID = user.sub
+        let userID = ""
+        if (user) {userID = user.sub;}
+        else {
+            return {
+                statusCode: 401,
+                body: JSON.stringify( { message: "Not a user" } )
+            }
+        }
 
         if (item_name == "") {
             check = false;
