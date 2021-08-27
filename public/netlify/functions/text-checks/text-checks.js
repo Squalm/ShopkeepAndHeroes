@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 const { response } = require("express");
 
-exports.handler = async (event, context) => {
+module.exports.handler = async (event, context) => {
     try {
 
         let check = true;
@@ -66,5 +66,4 @@ exports.handler = async (event, context) => {
     }
 }
 
-// eslint-disable-next-line no-undef
 module.exports = { handler }
