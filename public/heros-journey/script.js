@@ -11,6 +11,6 @@ async function browseItems(page) {
 
 }
 
-window.onload( () => {
+window.onload = function() {
     browseItems(0);
-})
+};
