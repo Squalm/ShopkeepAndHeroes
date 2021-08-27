@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+// eslint-disable-next-line no-unused-vars
 const { response } = require("express");
 
 const handler = async (event, context) => {
