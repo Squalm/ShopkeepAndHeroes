@@ -2,7 +2,17 @@
 async function onSubmitItem() {
 
     // Submit the item to the database by invoking the function
-    
+    const request_url = "https://shopkeepandheroes.netlify.app/.netlify/functions/text-checks?iname=" + document.getElementById("itemInput").value;
+    var xhr = new XMLHttpRequest();
+    let response = ""
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            console.log(xhr.response);
+            response = xhr.responseText;
+        }
+    }
+    xhr.open("GET", request_url, true);
+    document.getElementById("itemTitle").innerText = response;
 
 }
 
