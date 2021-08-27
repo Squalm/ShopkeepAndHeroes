@@ -6,7 +6,7 @@ const handler = async (event, context) => {
     try {
 
         let check = true;
-        let item_name = event.queryStringParameters.iname;
+        let item_name = JSON.parse(event.body);
 
         // eslint-disable-next-line no-unused-vars
         const { identity, user } = context.clientContext;
@@ -64,7 +64,7 @@ const handler = async (event, context) => {
 
 
     } catch (error) {
-        return { statusCode: 500, body: error.toString() }
+        return { statusCode: 400, body: error.toString() }
     }
 }
 
