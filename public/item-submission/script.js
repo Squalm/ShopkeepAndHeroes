@@ -2,7 +2,7 @@
 async function onSubmitItem() {
 
     // Submit the item to the database by invoking the function
-    const request_url = "../.netlify/functions/text_checks/text_checks.js";
+    const request_url = "../.netlify/functions/text_checks";
     let item_name = document.getElementById("itemInput").value;
     console.log(item_name)
     const submit_item =  fetch(request_url, {
