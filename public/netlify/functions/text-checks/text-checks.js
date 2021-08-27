@@ -4,7 +4,7 @@ const handler = async (event, context) => {
     try {
 
         let check = true;
-        let item_name = document.getElementById("itemInput").value.trim();
+        let item_name = event.queryStringParameters.iname;
 
         // eslint-disable-next-line no-unused-vars
         const { identity, user } = context.clientContext;
