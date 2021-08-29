@@ -9,7 +9,7 @@
 
 const fetch = require("node-fetch");
 
-exports.handler = async function(event, context) {
+exports.handler = async function(event, context, callback) {
   const { user } = JSON.parse(event.body);
 
   const responseBodyString = JSON.stringify({
@@ -47,7 +47,7 @@ exports.handler = async function(event, context) {
     console.log(errors);
     return {
       statusCode: 500,
-      body: "Something is wrong"
+      body: data
     };
   } else {
     return {
