@@ -1,6 +1,6 @@
 {
     "name": "shopkeepandheroes",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "license": "GPL-3.0",
     "repository": {
         "url": "https://github.com/Squalm/ShopkeepAndHeroes"
@@ -9,11 +9,8 @@
         "url": "https://github.com/Squalm/ShopkeepAndHeroes/issues"
     },
     "dependencies": {
-        "axios": "^0.21.1",
-        "express": "^4.17.1",
-        "express-openid-connect": "^2.5.0",
         "netlify-cli": "^6.7.5",
-        "node-fetch": "^2.6.1"
+        "node-fetch": "^2.6.1",
     },
     "devDependencies": {
         "eslint": "^7.32.0"
