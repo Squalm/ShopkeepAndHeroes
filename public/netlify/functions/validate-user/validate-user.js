@@ -5,7 +5,7 @@
 // eslint-disable-next-line no-redeclare
 const fetch = require("node-fetch");
 
-exports.handler = async (event, context, callback) => {
+exports.handler = async (event, context) => {
   const {
     identity,
     user

@@ -9,7 +9,7 @@
 
 const fetch = require("node-fetch");
 
-exports.handler = async function(event, context, callback) {
+exports.handler = async function(event, context) {
   const { user } = JSON.parse(event.body);
 
   const responseBodyString = JSON.stringify({
@@ -37,6 +37,7 @@ exports.handler = async function(event, context, callback) {
       headers: {
         "Content-Type": "application/json",
         "x-hasura-admin-secret":
+          // eslint-disable-next-line no-undef
           process.env.HASURA_SECRET
       }
     }
