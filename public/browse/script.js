@@ -11,13 +11,11 @@ async function browsePage() {
 
     for (let item = 0; item < parsed_json.items.length; item++) {
         graphical_results_html += 
-        '<div class="result_container"><span class="result name">' + parsed_json.items[item].name + '</span>' +
-        '<span class="result author">- ' + parsed_json.items[item].user.name + '</span>';
+        '<div class="result_container"><span class="result name">' + parsed_json.items[item].name + '</span>';
 
         for (let journey = 0; journey < parsed_json.items[item].journeys.length; journey++) {
             graphical_results_html +=
             '<div class="journey_container"><span class="result journey description">' + parsed_json.items[item].journeys[journey].description + '</span>' +
-            '<span class="result journey author">- ' + parsed_json.items[item].journeys[journey].user.name + '</span>' +
             '<span class="result journey likes">Likes: ' + parsed_json.items[item].journeys[journey].likes + '</span>' +
             '<span class="result journey created_at">' + parseTimeStamp(parsed_json.items[item].journeys[journey].created_at) + '</span><br></div>';
         }

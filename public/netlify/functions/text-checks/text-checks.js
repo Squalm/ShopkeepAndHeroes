@@ -2,21 +2,11 @@
 // eslint-disable-next-line no-unused-vars
 const { response } = require("express");
 
-exports.handler = async (event, context) => {
+exports.handler = async (event) => {
     try {
 
         let check = true;
         let item_name = JSON.parse(event.body);
-
-        const user = context.clientContext.user;
-
-        if (user) {userID = user.sub;}
-        else {
-            return {
-                statusCode: 401,
-                body: JSON.stringify( { message: "Not a user" } )
-            }
-        }
 
         if (item_name == "") {
             check = false;
@@ -44,7 +34,7 @@ exports.handler = async (event, context) => {
 
         // If all checks passed:
 
-        const request_url = "https://shopkeep-and-heroes.hasura.app/api/rest/items/insert/"+ item_name +"/" + userID;
+        const request_url = "https://shopkeep-and-heroes.hasura.app/api/rest/items/insert/"+ item_name;
         var xhr = new XMLHttpRequest();
         let response;
         xhr.onreadystatechange = function() {
