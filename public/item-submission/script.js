@@ -1,29 +1,17 @@
 // eslint-disable-next-line no-unused-vars
 async function onSubmitItem(token) {
 
-    const captcha = fetch("https://www.google.com/recaptcha/api/siteverify", {
-        secret: process.env.GRECAPTCHA_SECRET,
-        response: token,
-        method: "POST"
-    }).then((response) => {
+    // Submit the item to the database by invoking the function
+    const request_url = "https://shopkeepandheroes.netlify.app/.netlify/functions/text-checks";
+    let item_name = document.getElementById("itemInput").value;
+    console.log(item_name)
+    const submit_item =  fetch(request_url, {
+            body: JSON.stringify(item_name),
+            method: "POST"
+        }).then((response) => {
         return response.json()
-    })
-
-    if (captcha.success) {
-
-        // Submit the item to the database by invoking the function
-        const request_url = "https://shopkeepandheroes.netlify.app/.netlify/functions/text-checks";
-        let item_name = document.getElementById("itemInput").value;
-        console.log(item_name)
-        const submit_item =  fetch(request_url, {
-                body: JSON.stringify(item_name),
-                method: "POST"
-            }).then((response) => {
-            return response.json()
-        });
-        document.getElementById("itemTitle").value = submit_item;
-    
-    }
+    });
+    document.getElementById("itemTitle").value = submit_item;
 
 }
 
