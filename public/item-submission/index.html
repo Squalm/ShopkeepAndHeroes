@@ -16,14 +16,13 @@
     <link href="../global-style.css" rel="stylesheet" type="text/css" />
     <link href="style.css" rel="stylesheet" type="text/css" />
 
-    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   </head>
 
   <body>
 
-    <header><a href="../index.html">Home</a> <a href="../browse/index.html">Browse</a> <a href="../item-submission/index.html">Shopkeep</a> <a href="../heros-journey/index.html">Hero</a> <a href="../about/index.html">About</a> <div data-netlify-identity-button></div>
-    </header>
+    <header><a href="../index.html">Home</a> <a href="../browse/index.html">Browse</a> <a href="../item-submission/index.html">Shopkeep</a> <a href="../heros-journey/index.html">Hero</a> <a href="../about/index.html">About</a></header>
 
     <div id="itemPrompt">
     
@@ -34,7 +33,7 @@
 
         <p id="itemInputLimits">Max 64 characters, make it something good! N.B. Once you submit your item, you won't be able to edit it (we can delete it for you), so double and triple check!</p>
 
-        <button id="itemSubmit" type="button" onclick="onSubmitItem()">Submit</button>
+        <button id="itemSubmit" type="button" class="g-recaptcha" data-sitekey="6Lfh1zgcAAAAAGro6jQ4xira6JH6zBzAuLW2IvNu" data-callback='onSubmitItem'>Submit</button>
     
     </div>
 

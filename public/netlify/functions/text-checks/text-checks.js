@@ -43,7 +43,7 @@ exports.handler = async (event) => {
                 response = xhr.response;
             }
         }
-        xhr.open("POST", request_url, true, userID);
+        xhr.open("POST", request_url, true);
 
         return {
             statusCode: 200,
