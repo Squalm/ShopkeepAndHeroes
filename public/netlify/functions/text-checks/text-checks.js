@@ -6,7 +6,7 @@ exports.handler = async (event) => {
     try {
 
         let check = true;
-        let item_name = JSON.parse(event.body);
+        const {item_name, token} = JSON.parse(event.body);
 
         if (item_name == "") {
             check = false;

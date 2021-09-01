@@ -6,7 +6,7 @@ async function onSubmitItem(token) {
     let item_name = document.getElementById("itemInput").value;
     console.log(item_name)
     const submit_item =  fetch(request_url, {
-            body: JSON.stringify(item_name),
+            body: JSON.stringify([item_name, token]),
             method: "POST"
         }).then((response) => {
         return response.json()
