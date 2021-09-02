@@ -16,7 +16,6 @@ async function browsePage() {
         for (let journey = 0; journey < parsed_json.items[item].journeys.length; journey++) {
             graphical_results_html +=
             '<div class="journey_container"><span class="result journey description">' + parsed_json.items[item].journeys[journey].description + '</span>' +
-            '<span class="result journey likes">Likes: ' + parsed_json.items[item].journeys[journey].likes + '</span>' +
             '<span class="result journey created_at">' + parseTimeStamp(parsed_json.items[item].journeys[journey].created_at) + '</span><br></div>';
         }
 
@@ -25,7 +24,6 @@ async function browsePage() {
         }
 
         graphical_results_html +=
-        '<span class="result likes">Likes: ' + parsed_json.items[item].likes + '</span>' +
         '<span class="result created_at">' + parseTimeStamp(parsed_json.items[item].created_at) + '</span><br>';
 
         graphical_results_html += '</div>'
