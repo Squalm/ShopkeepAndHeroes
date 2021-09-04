@@ -1,6 +1,8 @@
 /* eslint-disable no-undef */
 // eslint-disable-next-line no-unused-vars
-const { response } = require("express");
+
+// eslint-disable-next-line no-unused-vars
+const { json } = require("express");
 
 exports.handler = async (event) => {
     try {
@@ -20,7 +22,9 @@ exports.handler = async (event) => {
             return response.json()
         })
         
-        if (captcha.success == false) {
+        const captcha_succeeded = await captcha.success
+
+        if (captcha_succeeded == false) {
             check = false;
         }
 
@@ -46,24 +50,25 @@ exports.handler = async (event) => {
 
         // If all checks passed:
 
-        const request_url = "https://shopkeep-and-heroes.hasura.app/api/rest/items/insert/"+ item_name;
-        var xhr = new XMLHttpRequest();
-        let response;
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == XMLHttpRequest.DONE) {
-                console.log(xhr.response);
-                response = xhr.response;
+        let query = "";
+
+        const submit_item = fetch("https://shopkeep-and-heroes.hasura.app/v1/graphql", {
+            body: JSON.stringify({ query: query }),
+            method: "POST",
+            headers: {
+                X_HASURA_ADMIN_SECRET: process.env.HASURA_SECRET
             }
-        }
-        xhr.open("POST", request_url, true);
+        }).then( (response) => {return response.json()} );
+
+        const hasura_response = await submit_item
 
         return {
             statusCode: 200,
-            body: JSON.stringify({ message: response })
+            body: JSON.stringify({ message: hasura_response })
         };
 
 
     } catch (error) {
-        return { statusCode: 400, body: error.toString() }
+        return { statusCode: 400, body: JSON.stringify( {message: error.toString()} ) }
     }
 }
