@@ -10,8 +10,7 @@ async function browsePage() {
     let graphical_results_html = "";
 
     for (let item = 0; item < parsed_json.items.length; item++) {
-        graphical_results_html += 
-        '<div class="result_container"><span class="result name">' + parsed_json.items[item].name + '</span>';
+        graphical_results_html += '<div class="result_container"><span class="result name">' + parsed_json.items[item].name + '</span>';
 
         for (let journey = 0; journey < parsed_json.items[item].journeys.length; journey++) {
             graphical_results_html +=
@@ -23,8 +22,7 @@ async function browsePage() {
             graphical_results_html += '<div class="journey_container"><span class="result journey description placeholder">This item doesn\'t have any journeys yet; <a href="../heros-journey/index.html">make one</a>!</span></div>'
         }
 
-        graphical_results_html +=
-        '<span class="result created_at">' + parseTimeStamp(parsed_json.items[item].created_at) + '</span><br>';
+        graphical_results_html += '<span class="result created_at">' + parseTimeStamp(parsed_json.items[item].created_at) + '</span><br>';
 
         graphical_results_html += '</div>'
 
