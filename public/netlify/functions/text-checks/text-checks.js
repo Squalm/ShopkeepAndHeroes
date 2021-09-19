@@ -7,6 +7,20 @@ const { json } = require("express");
 exports.handler = async (event) => {
     try {
 
+        // CORS Stuff
+        const cors_headers = {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type",
+            "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
+        };
+        if (event.httpMethod == "OPTIONS") {
+            return {
+                statusCode: 200,
+                cors_headers,
+                body: JSON.stringify( { message: "Successful preflight" } )
+            };
+        }
+
         let check = true;
         const {item_name, token} = JSON.parse(event.body);
 
@@ -44,6 +58,7 @@ exports.handler = async (event) => {
         if (check == false) {
             return {
                 statusCode: 401,
+                cors_headers,
                 body: JSON.stringify( { message: "The item failed one or more checks" } )
             }
         }
@@ -64,11 +79,12 @@ exports.handler = async (event) => {
 
         return {
             statusCode: 200,
+            cors_headers,
             body: JSON.stringify({ message: hasura_response })
         };
 
 
     } catch (error) {
-        return { statusCode: 400, body: JSON.stringify( {message: error.toString()} ) }
+        return { statusCode: 400, cors_headers, body: JSON.stringify( {message: error.toString()} ) }
     }
 }
