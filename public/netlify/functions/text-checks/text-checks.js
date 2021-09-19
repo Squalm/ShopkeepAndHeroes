@@ -3,7 +3,7 @@
 
 // eslint-disable-next-line no-unused-vars
 const { json } = require("express");
-import fetch from 'node-fetch';
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 exports.handler = async (event) => {
     
