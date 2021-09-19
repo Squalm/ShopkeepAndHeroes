@@ -68,7 +68,7 @@ exports.handler = async (event) => {
 
         // If all checks passed:
 
-        let query = "mutation {insert_items_one(object: {name: "+item_name+"}) {id created_at} }";
+        let query = 'mutation {insert_items_one(object: {name: "'+item_name+'"}) {id created_at} }';
 
         const submit_item = fetch("https://shopkeep-and-heroes.hasura.app/v1/graphql", {
             body: JSON.stringify({ query: query }),
