@@ -78,7 +78,8 @@ exports.handler = async (event) => {
             }
         }).then( (response) => {return response.json()} );
 
-        const hasura_response = await submit_item
+        const hasura_response = await submit_item;
+        console.log("Submitted item: " + item_name);
 
         return {
             statusCode: 200,
@@ -88,6 +89,7 @@ exports.handler = async (event) => {
 
 
     } catch (error) {
+        console.log(error);
         return { statusCode: 400, cors_headers, body: JSON.stringify( {message: error.toString()} ) }
     }
 }
