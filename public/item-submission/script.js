@@ -38,7 +38,7 @@ window.setInterval( () => {
 
 window.onload = () => {
 
-    const cors_request = fetch("https://shopkeepandheroes.netlify.app/.netlify/functions/text-checks", {body: JSON.stringify(["cors_request", "abc"])});
+    const cors_request = fetch("https://shopkeepandheroes.netlify.app/.netlify/functions/text-checks", {body: JSON.stringify(["cors_request", "abc"]), method: "POST"});
     console.log(cors_request);
 
 }
