@@ -5,14 +5,17 @@
 const { json } = require("express");
 
 exports.handler = async (event) => {
+    
+    // Headers
+    const cors_headers = {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
+    };
+
     try {
 
         // CORS Stuff
-        const cors_headers = {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "Content-Type",
-            "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
-        };
         if (event.httpMethod == "OPTIONS") {
             return {
                 statusCode: 200,
