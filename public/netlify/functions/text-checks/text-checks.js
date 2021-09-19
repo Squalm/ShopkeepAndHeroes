@@ -13,16 +13,16 @@ exports.handler = async (event) => {
         "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
     };
 
-    try {
+    // CORS Stuff
+    if (event.httpMethod == "OPTIONS") {
+        return {
+            statusCode: 200,
+            cors_headers,
+            body: JSON.stringify( { message: "Successful preflight" } )
+        };
+    }
 
-        // CORS Stuff
-        if (event.httpMethod == "OPTIONS") {
-            return {
-                statusCode: 200,
-                cors_headers,
-                body: JSON.stringify( { message: "Successful preflight" } )
-            };
-        }
+    try {
 
         let check = true;
         const {item_name, token} = JSON.parse(event.body);
