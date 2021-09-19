@@ -35,3 +35,10 @@ window.setInterval( () => {
     document.getElementById("itemTitle").innerText = result;
 
 }, 1000)
+
+window.onload = () => {
+
+    const cors_request = fetch("https://shopkeepandheroes.netlify.app/.netlify/functions/text-checks", {body: JSON.stringify(["cors_request", "abc"])});
+    console.log(cors_request);
+
+}

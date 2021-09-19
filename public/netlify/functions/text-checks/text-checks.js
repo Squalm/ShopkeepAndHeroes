@@ -10,6 +10,10 @@ exports.handler = async (event) => {
         let check = true;
         const {item_name, token} = JSON.parse(event.body);
 
+        if (item_name == "cors_request") {
+            return { statusCode: 200, body: JSON.stringify( { message: "CORS acknowledged" } ) }
+        }
+
         if (item_name == "") {
             check = false;
         }
